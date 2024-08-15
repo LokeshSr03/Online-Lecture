@@ -28,12 +28,11 @@ const CourseEditScreen = () => {
   const { id: productId } = useParams();
 
   const [name, setName] = useState("");
-  const [price, setPrice] = useState(0);
   const [image, setImage] = useState("");
   const [brand, setBrand] = useState("");
-  const [category, setCategory] = useState("");
   const [description, setDescription] = useState("");
-  const [countInStock, setCountInStock] = useState("");
+  const [date, setDate] = useState(""); // New state for date
+  const [instructor, setInstructor] = useState(""); // New state for instructor
 
   const productDetails = useSelector((state) => state.productDetails);
   const { loading, error, product } = productDetails;
@@ -55,12 +54,12 @@ const CourseEditScreen = () => {
         dispatch(listProductDetails(productId));
       } else {
         setName(product.name);
-        setPrice(product.price);
         setImage(product.image);
         setBrand(product.brand);
-        setCategory(product.category);
-        setCountInStock(product.countInStock);
+
         setDescription(product.description);
+        setDate(product.date);
+        setInstructor(product.instructor);
       }
     }
   }, [dispatch, navigate, productId, product, successUpdate]);
@@ -72,12 +71,11 @@ const CourseEditScreen = () => {
       updateProduct({
         _id: productId,
         name,
-        price,
         image,
         brand,
-        category,
         description,
-        countInStock,
+        date,
+        instructor,
       })
     );
   };
@@ -169,6 +167,30 @@ const CourseEditScreen = () => {
                   onChange={(e) => setImage(e.target.value)}
                 />
                 <Input type="file" onChange={uploadFileHandler} />
+              </FormControl>
+              <Spacer h="3" />
+
+              {/* DATE */}
+              <FormControl id="date" isRequired>
+                <FormLabel>Date</FormLabel>
+                <Input
+                  type="date"
+                  placeholder="Select date"
+                  value={date}
+                  onChange={(e) => setDate(e.target.value)}
+                />
+              </FormControl>
+              <Spacer h="3" />
+
+              {/* INSTRUCTOR */}
+              <FormControl id="instructor" isRequired>
+                <FormLabel>Instructor</FormLabel>
+                <Input
+                  type="text"
+                  placeholder="Enter instructor name"
+                  value={instructor}
+                  onChange={(e) => setInstructor(e.target.value)}
+                />
               </FormControl>
               <Spacer h="3" />
 

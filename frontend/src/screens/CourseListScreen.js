@@ -107,6 +107,8 @@ const CourseListScreen = () => {
                 <Th>COURSE NAME</Th>
 
                 <Th>Level</Th>
+                <Th>Assigned to</Th>
+                <Th>Date</Th>
                 <Th></Th>
               </Tr>
             </Thead>
@@ -117,6 +119,8 @@ const CourseListScreen = () => {
                   <Td>{product.name}</Td>
 
                   <Td>{product.brand}</Td>
+                  <Td>{product.instructor}</Td>
+                  <Td>{product.date.split("T")[0]}</Td>
                   <Td>
                     <Flex justifyContent="flex-end" alignItems="center">
                       <Button
