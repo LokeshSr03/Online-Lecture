@@ -1,6 +1,5 @@
 import asyncHandler from "express-async-handler";
-import Product from "../models/productModel.js";
-import Order from "../models/orderModel.js";
+import Product from "../models/courseModel.js";
 
 /**
  * @desc		Get all products

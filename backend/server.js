@@ -4,8 +4,7 @@ import express from "express";
 import path from "path";
 import connectDB from "./config/db.js";
 import { errorHandler, notFound } from "./middlewares/errorMiddleware.js";
-import orderRoutes from "./routes/orderRoutes.js";
-import productRoutes from "./routes/productRoutes.js";
+import productRoutes from "./routes/courseRoutes.js";
 import userRoutes from "./routes/userRoutes.js";
 import uploadRoutes from "./routes/uplaoadRoutes.js";
 
@@ -22,7 +21,6 @@ app.get("/", (req, res) => {
 
 app.use("/api/products", productRoutes);
 app.use("/api/users", userRoutes);
-app.use("/api/orders", orderRoutes);
 app.use("/api/uploads", uploadRoutes);
 
 //create a static folder

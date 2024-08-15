@@ -6,7 +6,7 @@ import {
   createProduct,
   updateProduct,
   createReview,
-} from "../controllers/productController.js";
+} from "../controllers/courseController.js";
 import { admin, protect } from "../middlewares/authMiddleware.js";
 
 const router = express.Router();
