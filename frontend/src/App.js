@@ -5,7 +5,8 @@ import LoginScreen from "./screens/LoginScreen";
 import ProfileScreen from "./screens/ProfileScreen";
 import RegisterScreen from "./screens/RegisterScreen";
 import UserListScreen from "./screens/UserListScreen";
-
+import CourseListScreen from "./screens/CourseListScreen";
+import CourseEditScreen from "./screens/CourseEditScreen";
 
 const App = () => {
   return (
@@ -24,7 +25,11 @@ const App = () => {
           <Route path="/register" element={<RegisterScreen />} />
           <Route path="/profile" element={<ProfileScreen />} />
           <Route path="/admin/userlist" element={<UserListScreen />} />
-          
+          <Route path="/admin/productlist" element={<CourseListScreen />} />
+          <Route
+            path="/admin/product/:id/edit"
+            element={<CourseEditScreen />}
+          />
         </Routes>
       </Flex>
     </BrowserRouter>

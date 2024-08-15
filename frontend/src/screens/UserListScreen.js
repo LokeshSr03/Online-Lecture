@@ -96,25 +96,6 @@ const UserListScreen = () => {
                       />
                     )}
                   </Td>
-                  <Td>
-                    <Flex justifyContent="flex-end" alignItems="center">
-                      <Button
-                        mr="4"
-                        as={RouterLink}
-                        to={`/admin/user/${user._id}/edit`}
-                        colorScheme="teal"
-                      >
-                        <Icon as={IoPencilSharp} color="white" size="sm" />
-                      </Button>
-                      <Button
-                        mr="4"
-                        colorScheme="red"
-                        onClick={() => deleteHandler(user._id)}
-                      >
-                        <Icon as={IoTrashBinSharp} color="white" size="sm" />
-                      </Button>
-                    </Flex>
-                  </Td>
                 </Tr>
               ))}
             </Tbody>

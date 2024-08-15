@@ -75,8 +75,6 @@ const Header = () => {
         width={{ base: "full", md: "auto" }}
         mt={{ base: "3", md: "0" }}
       >
-        
-
         {userInfo ? (
           <Menu>
             <MenuButton
@@ -116,7 +114,7 @@ const Header = () => {
                 Instructor List
               </MenuItem>
               <MenuItem as={RouterLink} to="/admin/productlist">
-                Product List
+                Add Courses
               </MenuItem>
               <MenuItem as={RouterLink} to="/admin/orderlist">
                 Order List
