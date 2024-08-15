@@ -104,7 +104,7 @@ const CourseListScreen = () => {
             <Thead>
               <Tr>
                 <Th>ID</Th>
-                <Th>NAME</Th>
+                <Th>COURSE NAME</Th>
 
                 <Th>Level</Th>
                 <Th></Th>
