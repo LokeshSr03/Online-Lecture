@@ -141,65 +141,6 @@ const ProfileScreen = () => {
           </form>
         </FormContainer>
       </Flex>
-
-      {/* Orders */}
-      <Flex direction="column">
-        <Heading as="h2" mb="4">
-          My Orders
-        </Heading>
-
-        {loadingOrders ? (
-          <Loader />
-        ) : errorOrders ? (
-          <Message type="error">{errorOrders}</Message>
-        ) : (
-          <Table variant="striped">
-            <Thead>
-              <Tr>
-                <Th>ID</Th>
-                <Th>DATE</Th>
-                <Th>TOTAL</Th>
-                <Th>PAID</Th>
-                <Th>DELIVERED</Th>
-                <Th></Th>
-              </Tr>
-            </Thead>
-            <Tbody>
-              {orders.map((order) => (
-                <Tr key={order._id}>
-                  <Td>{order._id}</Td>
-                  <Td>{new Date(order.createdAt).toDateString()}</Td>
-                  <Td>₹{order.totalPrice}</Td>
-                  <Td>
-                    {order.isPaid ? (
-                      new Date(order.paidAt).toDateString()
-                    ) : (
-                      <Icon as={IoWarning} color="red" />
-                    )}{" "}
-                  </Td>
-                  <Td>
-                    {order.isDelivered ? (
-                      new Date(order.deliveredAt).toDateString()
-                    ) : (
-                      <Icon as={IoWarning} color="red" />
-                    )}{" "}
-                  </Td>
-                  <Td>
-                    <Button
-                      as={RouterLink}
-                      to={`/order/${order._id}`}
-                      colorScheme="teal"
-                      size="sm"
-                    >
-                      Details
-                    </Button>
-                  </Td>
-                </Tr>
-              ))}
-            </Tbody>
-          </Table>
-        )}
-      </Flex>
     </Grid>
   );
 };

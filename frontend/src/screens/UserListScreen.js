@@ -53,7 +53,7 @@ const UserListScreen = () => {
   return (
     <>
       <Heading as="h1" fontSize="3xl" mb="5">
-        Instructors
+        Instructors List
       </Heading>
       {loading ? (
         <Loader />
