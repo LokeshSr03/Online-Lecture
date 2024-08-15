@@ -120,7 +120,7 @@ const CourseListScreen = () => {
 
                   <Td>{product.brand}</Td>
                   <Td>{product.instructor}</Td>
-                  <Td>{product.date.split("T")[0]}</Td>
+                  <Td>{product.date && product.date.split("T")[0]}</Td>
                   <Td>
                     <Flex justifyContent="flex-end" alignItems="center">
                       <Button

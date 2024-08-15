@@ -7,6 +7,7 @@ import {
   Input,
   Link,
   Spacer,
+  Select,
 } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
@@ -36,6 +37,9 @@ const CourseEditScreen = () => {
 
   const productDetails = useSelector((state) => state.productDetails);
   const { loading, error, product } = productDetails;
+
+  const userList = useSelector((state) => state.userList);
+  const { users } = userList;
 
   const productUpdate = useSelector((state) => state.productUpdate);
   const {
@@ -185,12 +189,18 @@ const CourseEditScreen = () => {
               {/* INSTRUCTOR */}
               <FormControl id="instructor" isRequired>
                 <FormLabel>Instructor</FormLabel>
-                <Input
-                  type="text"
-                  placeholder="Enter instructor name"
+                <Select
+                  placeholder="Select Instructor"
                   value={instructor}
                   onChange={(e) => setInstructor(e.target.value)}
-                />
+                >
+                  {users &&
+                    users.map((user) => (
+                      <option key={user._id} value={user.name}>
+                        {user.name}
+                      </option>
+                    ))}
+                </Select>
               </FormControl>
               <Spacer h="3" />
 
