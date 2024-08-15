@@ -57,7 +57,7 @@ const Header = () => {
           fontWeight="bold"
           textTransform="uppercase"
         >
-          RST Store
+          Online Lecture
         </Heading>
       </Link>
 
@@ -115,9 +115,6 @@ const Header = () => {
               </MenuItem>
               <MenuItem as={RouterLink} to="/admin/productlist">
                 Add Courses
-              </MenuItem>
-              <MenuItem as={RouterLink} to="/admin/orderlist">
-                Order List
               </MenuItem>
             </MenuList>
           </Menu>

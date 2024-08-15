@@ -7,6 +7,7 @@ import RegisterScreen from "./screens/RegisterScreen";
 import UserListScreen from "./screens/UserListScreen";
 import CourseListScreen from "./screens/CourseListScreen";
 import CourseEditScreen from "./screens/CourseEditScreen";
+import HomeScreen from "./screens/HomeScreen";
 
 const App = () => {
   return (
@@ -21,6 +22,7 @@ const App = () => {
         bgColor="gray.200"
       >
         <Routes>
+          <Route path="/" element={<HomeScreen />} />
           <Route path="/login" element={<LoginScreen />} />
           <Route path="/register" element={<RegisterScreen />} />
           <Route path="/profile" element={<ProfileScreen />} />
